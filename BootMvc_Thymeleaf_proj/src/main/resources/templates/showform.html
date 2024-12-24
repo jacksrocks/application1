@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1><i>Add Mobibes</i></h1>
+<form th:action="@{/mobiles/addmobile}" th:object="${mobile}" method="post">
+  <table align="center" bgcolor="cyan">
+    <tr>
+      <td>MobileModel</td>
+      <td><input type="text" th:field="*{model}"/></td>
+    </tr>
+    <tr>
+      <td>MobileBrand</td>
+      <td><input type="text" th:field="*{brand}"/></td>
+    </tr>
+    <tr>
+      <td>MobilePrice</td>
+      <td><input type="text" th:field="*{price}"/></td>
+    </tr>
+    <tr>
+      <td>MobileNettype</td>
+      <td><input type="text" th:field="*{networktype}"/></td>
+    </tr>
+    <tr>
+      <td>MobileProcessor</td>
+      <td><input type="text" th:field="*{processor}"/></td>
+    </tr>
+    <tr>
+      <td>MobileCam</td>
+      <td><input type="text" th:field="*{cam}"/></td>
+    </tr>
+    <tr>
+      <td>MobileBettary</td>
+      <td><input type="text" th:field="*{battery}"/></td>
+    </tr>
+    <tr>
+      <td>Mobileyear</td>
+      <td><input type="text" th:field="*{year}"/></td>
+    </tr>
+    <tr>
+      <td><input type="submit" value="Submit"/></td>
+       <td><input type="reset" value="Reset"/></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

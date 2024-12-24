@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body style="background-image: url('[[/images/mobiles.jpeg]]'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+<h1><i>MOBILES DATA</i></h1>
+<div th:if="${!mobiles.empty}">
+<table border="1" bgcolor="cyan">
+    <tr>
+       <th>mobile_id</th>
+       <th>model</th>
+       <th>brand</th>
+       <th>price</th>
+       <th>networktype</th>
+       <th>processor</th>
+       <th>cam</th>
+       <th>battery</th>
+       <th>year</th>
+       <th>operations</th>
+     <tr>
+    <tr th:each="mbl:${mobiles}">
+       <td><span th:text="${mbl.mobile_id}"/></td>
+       <td><span th:text="${mbl.model}"/></td>
+       <td><span th:text="${mbl.brand}"/></td>
+       <td><span th:text="${mbl.price}"/></td>
+       <td><span th:text="${mbl.networktype}"/></td>
+       <td><span th:text="${mbl.processor}"/></td>
+       <td><span th:text="${mbl.cam}"/></td>
+       <td><span th:text="${mbl.battery}"/></td>
+       <td><span th:text="${mbl.year}"/></td>
+       <td>
+       <a th:href="@{/mobiles/edit(no=${mbl.mobile_id})}">edit</a>
+       <a th:href="@{/mobiles/delete(no=${mbl.mobile_id})}"onclick="return confirm('do you want to delete...')">delete</a>
+       </td>
+    </tr>
+</table>
+<div th:if="${mobiles.empty}">
+<h1><i>mobiles data is not found</i></h1>
+</div>
+</div>
+<br>
+<br>
+<div>
+<h1 th:text="${resMsg}"/>
+</div>
+<center>
+   <a th:href="@{/mobiles/addmobile}">add</a>
+   <a th:href="@{/./}">home</a>
+</center>
+</body>
+</html>
